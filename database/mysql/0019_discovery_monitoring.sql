@@ -96,7 +96,6 @@ INSERT IGNORE INTO t_bios_nut_configuration_type
 VALUES
 (1, 'Driver snmpv1 ups', 'snmp-ups', '${asset.ext.ip.1}'),
 (2, 'Driver snmpv3 ups', 'snmp-ups', '${asset.ext.ip.1}'),
-(3, 'Driver xmlv3 ups', 'netxml-ups', 'http://${asset.ext.ip.1}');
 (4, 'Driver dummy snmp', 'dummy-snmp', '${asset.ext.name}@${asset.ext.ip.1}');
 
 /* NUT configuration */
@@ -191,7 +190,7 @@ CREATE TABLE IF NOT EXISTS t_bios_nut_configuration_default_attribute(
 INSERT IGNORE INTO t_bios_nut_configuration_default_attribute
 (id_nut_configuration_type, keytag, value)
 VALUES
-(2, 'snmp_version', 'v3');
+(2, 'snmp_version', 'v3'),
 (4, 'synchronous', 'yes');
 
 /* NUT configuration default attribute view */
