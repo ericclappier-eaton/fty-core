@@ -97,7 +97,7 @@ VALUES
 (1, 'NUT driver snmp-ups (SNMPv1)',                         'snmp-ups',     '${asset.ext.ip.1}'),
 (2, 'NUT driver snmp-ups (SNMPv3)',                         'snmp-ups',     '${asset.ext.ip.1}'),
 (3, 'NUT driver netxml-ups (XML-PDCv3)',                    'netxml-ups',   'http://${asset.ext.ip.1}'),
-(4, 'NUT driver dummy UPS (repeater mode) with asset name', 'dummy-snmp',   '${asset.ext.name}@${asset.ext.ip.1}');
+(4, 'NUT driver dummy-ups (repeater mode) with asset name', 'dummy-ups',    '${asset.ext.name}@${asset.ext.ip.1}');
 
 /* NUT configuration */
 CREATE TABLE IF NOT EXISTS t_bios_nut_configuration(
