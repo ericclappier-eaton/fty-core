@@ -552,7 +552,7 @@ busybox --install -s
 
 # To do
 # clean up : /usr/share/fty/scripts/update-rc.d.sh
-# this script used to replace /usr/sbin/update-rc.d perl tool by 
+# this script used to replace /usr/sbin/update-rc.d perl tool by
 # our shell equivalent if Perl is not available
 # so we don't need it as we install perl in both devel/deploy image
 
@@ -1654,6 +1654,9 @@ find /var/log -group bios-logread -exec chmod g+r '{}' \; || true
 # to avoid flooding console / Welcome screen
 # It will be activated by fty-license-accepted.path
 /bin/systemctl disable fty-license-accepted.service || true
+
+# BLACKDUCK CCOE fix BDSA-2023-1947 (CVE-2023-32629)
+echo kernel.unprivileged_userns_clone=0 | tee /etc/sysctl.d/99-disable-unpriv-userns.conf
 
 # GDB pretty printing
 case "$IMGTYPE" in
