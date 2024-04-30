@@ -16,12 +16,6 @@
     You should have received a copy of the GNU General Public License along
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-    NOTE : This Jenkins pipeline script only handles the self-testing of your
-    project. If you also want the successful codebase published or deployed,
-    you can define a helper job - see the reference implementation skeleton at
-    https://github.com/zeromq/zproject/blob/master/Jenkinsfile-deploy.example
-
 */
 
 @Library('etn-ipm2-jenkins') _
@@ -39,7 +33,6 @@ pipeline {
         // defined in this jenkins setup -- in Jenkins Management Web-GUI
         // see Configure System / Global properties / Environment variables
         // Default (if unset) is empty => no deployment attempt after good test
-        // See zproject Jenkinsfile-deploy.example for an example deploy job.
         // TODO: Try to marry MultiBranchPipeline support with pre-set defaults
         // directly in MultiBranchPipeline plugin, or mechanism like Credentials,
         // or a config file uploaded to master for all jobs or this job, see
