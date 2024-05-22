@@ -194,18 +194,6 @@ mvln /var/lib/bios/nut                /var/lib/fty/nut
 # But a legacy system may have an agent file of its own...
 mvln /var/lib/bios/composite-metrics/agent_th  /var/lib/fty/fty-sensor-env/state
 
-# alert list file must be converted, do it manually
-if [[ -e /var/lib/bios/agent-alerts-list/state_file ]]; then
-    mkdir -p /var/lib/fty/fty-alert-list
-    chown bios:root /var/lib/fty/fty-alert-list
-    /usr/bin/fty-alert-list-convert \
-        state_file \
-        /var/lib/bios/agent-alerts-list \
-        /var/lib/fty/fty-alert-list
-    chown bios:bios-infra /var/lib/fty/fty-alert-list/state_file || :
-    rm -rf /var/lib/bios/agent-alerts-list
-fi
-
 # uptime file must be converted, do it manually
 if [[ -e /var/lib/bios/uptime/state ]]; then
     mkdir -p /var/lib/fty/fty-kpi-power-uptime
