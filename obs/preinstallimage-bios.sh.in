@@ -270,7 +270,7 @@ if [ -d /usr/libexec/bios -a ! -d /usr/libexec/fty ] ; then
     ln -srf /usr/libexec/fty /usr/libexec/bios || true
 fi
 
-# Support zproject-ized fty-rest deliverables
+# Support fty-rest deliverables
 for D in /usr/libexec /usr/lib /usr/share ; do
     for S in "" x86_64-linux-gnu arm-linux-gnueabihf ; do
         if [ -d "$D/$S/fty-rest" ] ; then
